@@ -7,3 +7,12 @@
 <p>Email : <%= @register.email %></p>
 <p>Phone : <%= @register.phone %></p>
 <p>Subject : <%= @register.subject %></p>
+
+<ul>
+  <li><%= link_to "แก้ไข", edit_register_path(@register) %></li>
+</ul>
+
+<li><%= link_to "ลบ", register_path(@register), 
+data: {turbo_method: :delete,
+turbo_confirm: "Are you sure?"
+ } %></li>

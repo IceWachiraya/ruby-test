@@ -18,10 +18,27 @@ class RegistersController < ApplicationController
     end
   end
 
+  def edit
+    @register = Register.find(params[:id])
+  end
+
+  def update
+    @register = Register.find(params[:id])
+    if @register.update(register_params)
+      redirect_to @register
+    else
+      render 'new',status: :unprocessable_entity
+    end
+  end
+  def destroy
+    @register = Register.find(params[:id])
+    @register.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
   def register_params
     params.require(:register).permit(:first_name, :last_name, :birthday, :gender, :email, :phone, :subject)
   end
-  
-  
 end
