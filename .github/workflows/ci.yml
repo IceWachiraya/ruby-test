@@ -30,4 +30,15 @@ jobs:
             push: true
             tags: |
               ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+      name: Deploy to AWS EC2
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.SSH_KEY }}
+            script: |
+                    cd deploy
+                    sudo docker compose pull
+                    sudo docker compose up -d
+
       
