@@ -34,7 +34,7 @@ class RegistersController < ApplicationController
     @register = Register.find(params[:id])
     @register.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to @register, status: :see_other
   end
 
   private

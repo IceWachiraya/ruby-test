@@ -1,46 +1,59 @@
-<h1>RegisterForm</h1 >
-<%= form_with model: @register, local: true do |form|%>
-<div>
-  <%= form.label :first_name %><br>
-  <%= form.text_field :first_name %>
+<body>
+<div class="reg-form-container">
+   
+<%= form_with model: @register, local: true, class: "reg-form" do |form| %>
+   <h1>Register Form</h1>
+  <!-- Row First Name and Last Name -->
+  <div class="form-row">
+    <div class="form-group">
+      <%= form.label :first_name, 'First Name' %><br>
+      <%= form.text_field :first_name, class: "form-control", id: "firstName" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :last_name, 'Last Name' %><br>
+      <%= form.text_field :last_name, class: "form-control", id: "lastName" %>
+    </div>
+  </div>
+
+  <!-- Row Birthday and Gender -->
+  <div class="form-row">
+    <div class="form-group">
+      <%= form.label :birthday, 'Birthday' %><br>
+      <%= form.date_field :birthday, class: "form-control", id: "birthday" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :gender, 'Gender' %><br>
+      <div class="radio-group">
+        <%= form.radio_button :gender, "male", id: "male" %>
+        <%= form.label :gender_male, "Male",  class:"label-gender" ,for: "male" %>
+        <%= form.radio_button :gender, "female", id: "female" %>
+        <%= form.label :gender_female, "Female", class:"label-gender" ,for: "female" %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row Email and Phone -->
+  <div class="form-row">
+    <div class="form-group">
+      <%= form.label :email, 'Email' %><br>
+      <%= form.email_field :email, class: "form-control", id: "email", required: true %>
+    </div>
+    <div class="form-group">
+      <%= form.label :phone, 'Phone Number' %><br>
+      <%= form.telephone_field :phone, class: "form-control", id: "phone", required: true %>
+    </div>
+  </div>
+
+  <!-- Row Subject -->
+  <div class="form-group">
+    <%= form.label :subject, 'Subject' %><br>
+    <%= form.select :subject, options_for_select([["Math", "math"], ["Science", "science"]]), prompt: "Choose option", class: "form-control", id: "subject", required: true %>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="form-group">
+    <%= form.submit "Submit", class: "btn-submit" %>
+  </div>
 </div>
-
-<div>
-  <%= form.label :last_name %><br>
-  <%= form.text_field :last_name %>
-</div>
-
-<div>
-  <%= form.label :email %><br>
-   <%= form.text_field :email %>
-</div>
-
-<div>
-  <%= form.label :phone %><br>
-   <%= form.text_field :phone %>
-</div>
-
-<div>
-   <%= form.label :birthday %><br>
-   <%= form.date_field :birthday%>
-</div>
-
-<div>
-    <%= form.label :gender %><br>
-    <%= form.radio_button :gender, "male", id: "male" %>
-    <%= form.label :gender_male, "Male", for: "male" %>
-    <%= form.radio_button :gender, "female", id: "female" %>
-    <%= form.label :gender_female, "Female", for: "female" %>
-</div>
-
-
-<div>
-  <%= form.label :subject %><br>
-  <%= form.select :subject, options_for_select([["Math", "math"], ["Science", "science"]]) %>
-</div>
-
-
-<div>
-  <%= form.submit "Submit" %>
-</div>
+<body>
 <% end %>

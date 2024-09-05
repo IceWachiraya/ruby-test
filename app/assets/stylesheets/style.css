@@ -1,4 +1,4 @@
-/* body {
+body {
     font-family: Sans-serif, sans-serif;
     background-color: #994376;
     background-image: linear-gradient(#994376, #c54577);
@@ -24,10 +24,7 @@
   .form-group {
     flex: 1;
   }
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
+  
   
   input[type="text"],
   input[type="date"],
@@ -37,6 +34,7 @@
     background-color: #fafafa;
     border: 1px solid #e7e7e7;
     padding: 8px 16px;
+    margin-top: 8px;
     border-radius: 8px;
     font-size: 14px;
     width: 100%;
@@ -47,7 +45,7 @@
   .radio-group {
     display: flex;
     gap: 8px;
-    margin-top: 14px;
+    margin-top: 12px;
   }
   .label-gender {
     margin-top: 4px;
@@ -122,7 +120,7 @@
     }
   
     .reg-form h1 {
-      font-size: 24px;
+      font-size: 20px;
     }
   
     .form-row {
@@ -131,7 +129,6 @@
   
     label {
       font-size: 14px;
-      margin-bottom: 6px;
     }
   
     .label-gender {
@@ -146,11 +143,10 @@
       padding: 5px 8px;
       font-size: 12px;
     }
-  
-    button {
+    .btn-submit {
       padding: 8px 16px;
       font-size: 14px;
       margin-top: 14px;
     }
   }
-   */
+  
