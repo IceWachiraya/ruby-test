@@ -1,0 +1,46 @@
+<h1>RegisterForm</h1 >
+<%= form_with model: @register, local: true do |form|%>
+<div>
+  <%= form.label :first_name %><br>
+  <%= form.text_field :first_name %>
+</div>
+
+<div>
+  <%= form.label :last_name %><br>
+  <%= form.text_field :last_name %>
+</div>
+
+<div>
+  <%= form.label :email %><br>
+   <%= form.text_field :email %>
+</div>
+
+<div>
+  <%= form.label :phone %><br>
+   <%= form.text_field :phone %>
+</div>
+
+<div>
+   <%= form.label :birthday %><br>
+   <%= form.date_field :birthday%>
+</div>
+
+<div>
+    <%= form.label :gender %><br>
+    <%= form.radio_button :gender, "male", id: "male" %>
+    <%= form.label :gender_male, "Male", for: "male" %>
+    <%= form.radio_button :gender, "female", id: "female" %>
+    <%= form.label :gender_female, "Female", for: "female" %>
+</div>
+
+
+<div>
+  <%= form.label :subject %><br>
+  <%= form.select :subject, options_for_select([["Math", "math"], ["Science", "science"]]) %>
+</div>
+
+
+<div>
+  <%= form.submit "Submit" %>
+</div>
+<% end %>
