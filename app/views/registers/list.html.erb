@@ -12,7 +12,7 @@
   <div class="container-list">
     <div class="header">
     <!-- Heading for the user list -->
-    <h1>All Registered Users</h1>
+    <h1>Complete User List</h1>
     </div>
 
     <!-- List of all users -->
@@ -28,8 +28,10 @@
           <% end %>
         </ul>
       <% else %>
-        <i class="fa-solid fa-circle-info"></i>
-        <p class="empty-user">Not have information users.</p>
+        <div class="empty-user">
+          <i class="fa-solid fa-circle-info fa-3x"></i>
+          <p >There are no users to display.</p>
+        </div>
       <% end %>
     </div>
   </div>

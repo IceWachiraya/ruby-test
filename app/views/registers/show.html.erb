@@ -1,4 +1,4 @@
-<body class="body-show">
+ <body class="body-show">
    
   <div class="container-show">
    
@@ -19,14 +19,13 @@
         <p><i class="fas fa-book"></i> <%= @register.subject %></p>
       </div>
 
-
       <!-- Action Links -->
       <div class="action-links">
         <%= link_to "Edit", edit_register_path(@register), class: "btn btn-edit" %>
         <%= link_to "Delete", register_path(@register), 
-          method: :delete, 
-          data: { confirm: "Are you sure?" },
-          class: "btn btn-delete" %>
+        data: {turbo_method: :delete,
+        turbo_confirm: "Are you sure?"}, class: "btn btn-delete" %>
+        
       </div>
     </div>
   </div>
