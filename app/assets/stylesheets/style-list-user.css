@@ -44,7 +44,7 @@
   background-color: #007bff;
 }
 .btn-back {
-  color:w ;
+  color:white ;
 }
 .btn-add {
   background-color: #28a745;
@@ -79,6 +79,11 @@
   font-size: 20px;
   font-weight: 600;
   color: #333;
+}
+.empty-user{
+  text-align: center;
+  padding: 20px;
+  color: #777
 }
 
 /* Responsive for smaller screens */

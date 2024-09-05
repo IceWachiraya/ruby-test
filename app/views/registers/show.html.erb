@@ -1,22 +1,33 @@
-<!-- Back Button -->
-<div class="form-group">
-<%= link_to "Back to all user", list_register_path, class: "btn-back" %>
- </div>
-<h1> User : <%= @register.first_name %> </h1>
+<body class="body-show">
+   
+  <div class="container-show">
+   
+    <!-- User Details -->
+    <div class="user-details">
+ 
+        <%= link_to list_register_path, class: "btn-back-all-users" do %>
+          <i class="fas fa-arrow-left"></i> Back
+        <% end %>
+  
+      <h1><%= @register.first_name %> <%= @register.last_name %></h1>
 
-<p>FirstName : <%= @register.first_name %></p>
-<p>Lastname : <%= @register.last_name %></p>
-<p>Birthday : <%= @register.birthday %></p>
-<p>Gender : <%= @register.gender %></p>
-<p>Email : <%= @register.email %></p>
-<p>Phone : <%= @register.phone %></p>
-<p>Subject : <%= @register.subject %></p>
+      <div class="details-list">
+        <p><i class="fas fa-cake-candles"></i>  <%= @register.birthday %></p>
+        <p><i class="fas fa-venus-mars"></i> <%= @register.gender %></p>
+        <p><i class="fas fa-envelope"></i>  <%= @register.email %></p>
+        <p><i class="fas fa-phone"></i>  <%= @register.phone %></p>
+        <p><i class="fas fa-book"></i> <%= @register.subject %></p>
+      </div>
 
-<ul>
-  <li><%= link_to "แก้ไข", edit_register_path(@register) %></li>
-</ul>
 
-<li><%= link_to "ลบ", register_path(@register), 
-data: {turbo_method: :delete,
-turbo_confirm: "Are you sure?"
- } %></li>
+      <!-- Action Links -->
+      <div class="action-links">
+        <%= link_to "Edit", edit_register_path(@register), class: "btn btn-edit" %>
+        <%= link_to "Delete", register_path(@register), 
+          method: :delete, 
+          data: { confirm: "Are you sure?" },
+          class: "btn btn-delete" %>
+      </div>
+    </div>
+  </div>
+</body>
