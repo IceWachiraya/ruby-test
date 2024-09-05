@@ -1,19 +1,27 @@
-<body body="body-list-user">
-<div class="list-container">
-<div class="action-link">
-  <%= link_to "Create Users", new_register_path, class: "btn btn-primary" %>
+<body class="body-home">
+<div class="container-home">
+  <!-- Navigation Section -->
+  <div class="header">
+    <h1>User Management</h1>
+    <p>Manage your users efficiently by creating new users or viewing the list of all registered users.</p>
+  </div>
 
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <!-- Create Users Button -->
+    <div class="action-link">
+      <%= link_to new_register_path, class: "btn btn-add btn-large" do %>
+        <i class="fas fa-user-plus"></i> Create Users
+      <% end %>
+    </div>
+
+    <!-- View All Users Button -->
+    <div class="action-link">
+      <%= link_to list_register_path, class: "btn btn-info btn-large" do %>
+        <i class="fas fa-users"></i> All Users
+      <% end %>
+    </div>
+  </div>
 </div>
-  <h1>List of Registered Persons</h1>
-
-<div>
-  <% @registers.each do |register| %>
-   <ul>
-    <li> ดูรายละเอียด: <%= link_to register.first_name, register %></li>
-    </ul>
-  <% end %>
-</div>
-
-
-</div>
+ 
 </body>

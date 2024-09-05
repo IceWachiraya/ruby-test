@@ -5,14 +5,16 @@ class RegistersController < ApplicationController
   def show 
     @register = Register.find(params[:id])
   end
-  
+  def list
+    @registers = Register.all
+  end
   def new
     @register = Register.new
   end
   def create
     @register = Register.new(register_params)
     if @register.save
-      redirect_to registers_path
+      redirect_to list_register_path
     else
         render 'new',status: :unprocessable_entity
     end
@@ -34,7 +36,7 @@ class RegistersController < ApplicationController
     @register = Register.find(params[:id])
     @register.destroy
 
-    redirect_to @register, status: :see_other
+    redirect_to list_register_path, status: :see_other
   end
 
   private

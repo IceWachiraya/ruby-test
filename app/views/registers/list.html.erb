@@ -1,0 +1,35 @@
+<body class="body-list">
+
+ <div class="row-btn">
+  <%= link_to registers_path, class: "btn btn-back" do %>
+    <i class="fas fa-arrow-left"></i>Back
+  <% end %>
+  <%= link_to new_register_path, class: "btn btn-add" do %>
+  <i class="fas fa-user-plus"></i>Create Users
+  <% end %>
+  </div>
+
+  <div class="container-list">
+    <div class="header">
+    <!-- Heading for the user list -->
+    <h1>All Registered Users</h1>
+    </div>
+
+    <!-- List of all users -->
+    <div class="user-list">
+      <% if @registers.any? %>
+        <ul class="user-cards">
+          <% @registers.each do |register| %>
+            <li class="user-card">
+              <p><%= register.first_name %> <%= register.last_name %></p>
+              <!-- View details link -->
+              <%= link_to "View Details", register_path(register), class: "btn btn-info" %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No users found.</p>
+      <% end %>
+    </div>
+  </div>
+</body>

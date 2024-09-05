@@ -1,6 +1,7 @@
 <body class="body-register">
 <div class="reg-form-container">
 <%= form_with model: @register, local: true, class: "reg-form" do |form| %>
+   
    <h1>Edit users</h1>
   <!-- Row First Name and Last Name -->
   <div class="form-row">
@@ -51,7 +52,7 @@
 
   <!-- Submit Button -->
   <div class="form-group">
-    <%= form.submit "Submit", class: "btn-submit" %>
+    <%= form.submit "Edit", class: "btn-submit" %>
   </div>
 </div>
 <body>

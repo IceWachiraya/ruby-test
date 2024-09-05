@@ -2,7 +2,11 @@
 <div class="reg-form-container">
    
   <%= form_with model: @register, local: true, class: "reg-form" do |form| %>
-   <h1>Register Form</h1>
+  <!-- Back Button -->
+      <div class="form-group">
+        <%= link_to "Back to Index", registers_path, class: "btn-back" %>
+      </div>
+   <h1>Create Users</h1>
   <!-- Row First Name and Last Name -->
   <div class="form-row">
     <div class="form-group">
@@ -54,6 +58,7 @@
   <div class="form-group">
     <%= form.submit "Submit", class: "btn-submit" %>
   </div>
+   
 </div>
 <body>
 <% end %>

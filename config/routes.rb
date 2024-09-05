@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
+   get 'registers/list', to: 'registers#list', as: 'list_register'
   resources :registers
-  # get "up" => "rails/health#show" , as: :rails_health_check
-  root"registers#new"
 end

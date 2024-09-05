@@ -1,0 +1,53 @@
+.body-home {
+    font-family: Sans-serif, sans-serif;
+    background-color: #994376;
+    background-image: linear-gradient(#994376, #c54577);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container-home {
+    background-color: white;
+    border-radius: 16px;
+    padding: 42px 64px;
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+  }
+
+  .header p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 24px;
+
+  }
+
+  .action-buttons {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 32px;
+
+  }
+
+  .action-link {
+    margin: 10px;
+  }
+
+  .btn {
+    border: none;
+    padding: 8px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .btn-add {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .btn i {
+    margin-right: 8px;
+  }

@@ -1,59 +1,89 @@
-.body-list-user{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.body-list {
+  font-family: Sans-serif, sans-serif;
+  background-color: #994376;
+  background-image: linear-gradient(#994376, #c54577);
+  padding-top: 32px;
+  width: 60%;
+  height: 100vh;
+  margin: 0 auto;
 }
-.list-container h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.container-list {
+  background-color: white;
+  padding: 20px;
+  border-radius: 24px;
+ 
 }
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+
+.header h1 {
+  text-align: center;
+  padding-bottom: 14px;
+}
+
+
+.row-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.action-link {
+  margin-right: 10px;
+ 
+}
+
+.btn {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #007bff;
+}
+.btn-back {
+  color:w ;
+}
+.btn-add {
+  background-color: #28a745;
+}
+.btn-info {
+  background-color: #007bff;
+}
+
+/* User list styling */
+.user-list {
+  margin-top: 20px;
+}
+
+.user-cards {
+  list-style: none;
+  padding: 0;
+}
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+.user-card p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+  .container-list {
+    width: 90%; 
   }
-  
-  .card {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-  }
-  
-  .card-body {
-    text-align: center;
-  }
-  
-  .card h2 {
-    margin-top: 0;
-    font-size: 24px;
-  }
-  
-  .card p {
-    margin: 10px 0;
-    color: #6c757d;
-  }
-  
-  .action-link {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
+}
