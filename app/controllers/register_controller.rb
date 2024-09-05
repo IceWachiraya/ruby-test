@@ -1,5 +1,8 @@
 class RegisterController < ApplicationController
   def index
-    @registers = Register.all
+    @register = Register.all
+  end
+  def show 
+    @register = Register.find(params[:id])
   end
 end

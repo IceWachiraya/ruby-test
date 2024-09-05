@@ -1,10 +1,9 @@
 <h1>List of registered persons</h1>
 
 <ul>
-    <% @registers.each do |register| %>
+    <% @register.each do |register| %>
     <li>
-         FirstName : <%= register.first_name %>
+       <%= link_to register.first_name, register%>
     </li>
-
     <% end %>
 </ul>
