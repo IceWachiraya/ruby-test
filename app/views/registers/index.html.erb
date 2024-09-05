@@ -1,10 +1,19 @@
-<h1>List of registered persons</h1>
+<body body="body-list-user">
+<div class="list-container">
+<div class="action-link">
+  <%= link_to "Create Users", new_register_path, class: "btn btn-primary" %>
 
-<ul>
-    <% @registers.each do |register| %>
-    <li>
-       <%= link_to register.first_name, register%>
-    </li>
-    <% end %>
-</ul>
-<%= link_to "Register", new_register_path %>
+</div>
+  <h1>List of Registered Persons</h1>
+
+<div>
+  <% @registers.each do |register| %>
+   <ul>
+    <li> <h2>ดูรายละเอียด: <%= link_to register.first_name, register %></h2></li>
+    </ul>
+  <% end %>
+</div>
+
+
+</div>
+</body>
