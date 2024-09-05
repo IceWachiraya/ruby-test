@@ -12,7 +12,7 @@ class RegistersController < ApplicationController
   def create
     @register = Register.new(register_params)
     if @register.save
-      redirect_to root_path
+      redirect_to registers_path
     else
         render 'new',status: :unprocessable_entity
     end
