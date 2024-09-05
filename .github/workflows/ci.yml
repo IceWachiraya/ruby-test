@@ -30,7 +30,7 @@ jobs:
             push: true
             tags: |
               ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
-      name: Deploy to AWS EC2
+      - name: Deploy to AWS EC2
           uses: appleboy/ssh-action@master
           with:
             host: ${{ secrets.HOST }}
