@@ -12,10 +12,12 @@
       <h1><%= @register.first_name %> <%= @register.last_name %></h1>
 
       <div class="details-list">
-        <p><i class="fas fa-cake-candles"></i>  <%= @register.birthday %></p>
+        <p><i class="fas fa-cake-candles"></i>  
+          <%= @register.birthday.strftime("%d %B %Y") if @register.birthday.present? %>
+        </p>
         <p><i class="fas fa-venus-mars"></i> <%= @register.gender %></p>
         <p><i class="fas fa-envelope"></i>  <%= @register.email %></p>
-        <p><i class="fas fa-phone"></i>  <%= @register.phone %></p>
+        <p><i class="fas fa-phone"></i>  +66  <%= @register.phone %></p>
         <p><i class="fas fa-book"></i> <%= @register.subject %></p>
       </div>
 
