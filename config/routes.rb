@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
    get 'registers/list', to: 'registers#list', as: 'list_register'
-  resources :registers
+   root'registers#index'
+   resources :registers
 end
