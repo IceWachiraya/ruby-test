@@ -29,7 +29,7 @@ class RegistersController < ApplicationController
     if @register.update(register_params)
       redirect_to @register
     else
-      render 'new',status: :unprocessable_entity
+      render 'edit',status: :unprocessable_entity
     end
   end
   def destroy

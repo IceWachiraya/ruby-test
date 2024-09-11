@@ -23,8 +23,14 @@
   }
   .form-group {
     flex: 1;
+    position: relative;
   }
-  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    position: absolute;
+  }
   
   input[type="text"],
   input[type="date"],

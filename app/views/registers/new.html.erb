@@ -6,48 +6,87 @@
   <!-- Row First Name and Last Name -->
   <div class="form-row">
     <div class="form-group">
-      <%= form.label :first_name, 'First Name' %><br>
-      <%= form.text_field :first_name, class: "form-control", id: "firstName", required: true %>
+      <%= form.label :first_name, 'First Name' %>
+      <%= form.text_field :first_name, class: "form-control", id: "firstName" %>
+      <!-- Message error first_name -->
+        <% if @register.errors[:first_name].any? %>
+       <div class="error-message">
+        <%= @register.errors[:first_name].join(", ") %>
+        </div>
+       <% end %>
     </div>
     <div class="form-group">
-      <%= form.label :last_name, 'Last Name' %><br>
-      <%= form.text_field :last_name, class: "form-control", id: "lastName" , required: true%>
+      <%= form.label :last_name, 'Last Name' %>
+      <%= form.text_field :last_name, class: "form-control", id: "lastName"%>
+       <!-- Message error last_name -->
+        <% if @register.errors[:last_name].any? %>
+       <div class="error-message">
+        <%= @register.errors[:last_name].join(", ") %>
+        </div>
+       <% end %>
     </div>
   </div>
 
   <!-- Row Birthday and Gender -->
   <div class="form-row">
     <div class="form-group">
-      <%= form.label :birthday, 'Birthday' %><br>
-      <%= form.date_field :birthday, class: "form-control", id: "birthday" , required: true%>
+      <%= form.label :birthday, 'Birthday' %>
+      <%= form.date_field :birthday, class: "form-control", id: "birthday" %>
+        <!-- Message error birthday -->
+        <% if @register.errors[:birthday].any? %>
+        <div class="error-message">
+        <%= @register.errors[:birthday].join(", ") %>
+        </div>
+        <% end %>
     </div>
     <div class="form-group">
-      <%= form.label :gender, 'Gender'%><br>
+      <%= form.label :gender, 'Gender'%>
       <div class="radio-group">
-        <%= form.radio_button :gender, "Male", id: "male" , required: true %>
+        <%= form.radio_button :gender, "Male", id: "male" %>
         <%= form.label :gender_male, "Male",  class:"label-gender" ,for: "male" %>
         <%= form.radio_button :gender, "Female", id: "female" %>
         <%= form.label :gender_female, "Female", class:"label-gender" ,for: "female" %>
       </div>
+      <!-- Message error gender -->
+      <% if @register.errors[:gender].any? %>
+      <div class="error-message">
+      <%= @register.errors[:gender].join(", ") %>
+      </div>
+      <% end %>
     </div>
   </div>
 
   <!-- Row Email and Phone -->
   <div class="form-row">
     <div class="form-group">
-      <%= form.label :email, 'Email' %><br>
-      <%= form.email_field :email, class: "form-control", id: "email", required: true %>
+      <%= form.label :email, 'Email' %>
+      <%= form.email_field :email, class: "form-control", id: "email" %>
+        <% if @register.errors[:email].any? %>
+        <div class="error-message">
+        <%= @register.errors[:email].join(", ") %>
+        </div>
+        <% end %>
     </div>
-    <div class="form-group">
-      <%= form.label :phone, 'Phone Number' %><br>
-      <%= form.telephone_field :phone, class: "form-control", id: "phone", required: true %>
-    </div>
-  </div>
+    <div class="form-group" data-controller="formatted-phone" >
+          <%= form.label :phone, 'Phone Number' %>
+          <%= form.telephone_field :phone, class: "form-control", id: "phone", data: { action: "input->formatted-phone#format", formatted_phone_target: "phone" } %>
+          <% if @register.errors[:phone].any? %>
+          <div class="error-message">
+            <%= @register.errors[:phone].join(", ") %>
+          </div>
+          <% end %>
+        </div>
+      </div>
 
   <!-- Row Subject -->
   <div class="form-group">
-    <%= form.label :subject, 'Subject' %><br>
-    <%= form.select :subject, options_for_select([["Math", "Math"], ["Science", "Science"]]), prompt: "Choose option", class: "form-control", id: "subject", required: true %>
+    <%= form.label :subject, 'Subject' %>
+    <%= form.select :subject, options_for_select([["Math", "Math"], ["Science", "Science"]]), prompt: "Choose option", class: "form-control", id: "subject" %>
+      <% if @register.errors[:subject].any? %>
+      <div class="error-message">
+      <%= @register.errors[:subject].join(", ") %>
+      </div>
+      <% end %>
   </div>
 
   <!-- Submit Button -->
