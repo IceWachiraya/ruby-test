@@ -67,15 +67,17 @@
         </div>
         <% end %>
     </div>
-     <div class="form-group">
-          <%= form.label :phone, 'Phone Number' %>
-          <%= form.telephone_field :phone, class: "form-control", id: "phone"%>
-          <% if @register.errors[:phone].any? %>
-            <div class="error-message">
-              <%= @register.errors[:phone].join(", ") %>
-            </div>
-          <% end %>
-        </div>
+<div class="form-group">
+  <%= form.label :phone, 'Phone Number' %>
+  <%= form.telephone_field :phone, class: "form-control", id: "phone", data: { controller: "phone", phone_target: "input" } %>
+  
+  <% if @register.errors[:phone].any? %>
+    <div class="error-message">
+      <%= @register.errors[:phone].join(", ") %>
+    </div>
+  <% end %>
+</div>
+
       </div>
 
   <!-- Row Subject -->
