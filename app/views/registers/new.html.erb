@@ -67,13 +67,13 @@
         </div>
         <% end %>
     </div>
-    <div class="form-group" data-controller="formatted-phone" >
+     <div class="form-group">
           <%= form.label :phone, 'Phone Number' %>
-          <%= form.telephone_field :phone, class: "form-control", id: "phone", data: { action: "input->formatted-phone#format", formatted_phone_target: "phone" } %>
+          <%= form.telephone_field :phone, class: "form-control", id: "phone", placeholder: "123-456-7890" %>
           <% if @register.errors[:phone].any? %>
-          <div class="error-message">
-            <%= @register.errors[:phone].join(", ") %>
-          </div>
+            <div class="error-message">
+              <%= @register.errors[:phone].join(", ") %>
+            </div>
           <% end %>
         </div>
       </div>
