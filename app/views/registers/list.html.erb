@@ -14,19 +14,29 @@
     <!-- Heading for the user list -->
     <h1>Complete User List</h1>
     </div>
+      <div class="filter">
+        <%= form_with url: list_register_path, method: :get, local: true, html: { id: 'filter-form' } do %>
+         <%= select_tag :subject, options_for_select(@subjects, params[:subject]), prompt: "All subjects", id: 'subject-select', class: 'filter-select' %>
+        <% end %>
+      </div>
+
+
 
     <!-- List of all users -->
     <div class="user-list">
       <% if @registers.any? %>
         <ul class="user-cards">
-          <% @registers.each do |register| %>
-            <li class="user-card">
-              <p><%= register.first_name %> <%= register.last_name %></p>
-              <!-- View details link -->
-              <%= link_to "View Details", register_path(register), class: "btn btn-info" %>
-            </li>
-          <% end %>
+        <% @registers.each do |register| %>
+          <li class="user-card">
+            <div class="user-info">
+              <p class="name-info"><%= register.first_name %> <%= register.last_name %></p>
+              <p class="subject-info">Subject : <%= register.subject %></p>
+            </div>
+            <%= link_to "View Details", register_path(register), class: "btn btn-info view-details" %>
+          </li>
+        <% end %>
         </ul>
+
       <% else %>
         <div class="empty-user">
           <i class="fa-solid fa-circle-info fa-3x"></i>

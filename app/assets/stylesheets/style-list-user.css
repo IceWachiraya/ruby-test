@@ -52,6 +52,9 @@
 .btn-info {
   background-color: #007bff;
 }
+.btn-filter{
+  background-color: #17a2b8;
+}
 
 /* User list styling */
 .user-list {
@@ -73,8 +76,14 @@
   border-radius: 16px;
   margin-bottom: 15px;
 }
-
-.user-card p {
+.user-info {
+  flex: 1;
+}
+.subject-info {
+  font-size: 16px;
+  font-weight: normal;
+}
+.name-info {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
@@ -84,6 +93,13 @@
   text-align: center;
   padding: 20px;
   color: #a3a3a3
+}
+
+.filter{
+ display: flex;
+ justify-content: end;
+ gap: 0.5rem;
+ 
 }
 
 /* Responsive for smaller screens */

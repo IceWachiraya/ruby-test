@@ -6,7 +6,12 @@ class RegistersController < ApplicationController
     @register = Register.find(params[:id])
   end
   def list
-    @registers = Register.all
+    @subjects = Register.pluck(:subject).uniq
+    if params[:subject].present?
+      @registers = Register.where(subject: params[:subject])
+    else
+      @registers = Register.all
+    end
   end
   def new
     @register = Register.new
@@ -24,6 +29,20 @@ class RegistersController < ApplicationController
     @register = Register.find(params[:id])
   end
 
+  def update
+    @register = Register.find(params[:id])
+    if @register.update(register_params)
+      redirect_to @register
+    else
+      render 'edit',status: :unprocessable_entity
+    end
+  end
+  # def destroy
+  #   @register = Register.find(params[:id])
+  #   @register.destroy
+
+  #   redirect_to list_register_path, status: :see_other
+  # end
   def destroy
     @register = Register.find(params[:id])
     @register.destroy

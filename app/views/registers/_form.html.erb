@@ -83,7 +83,7 @@
   <!-- Row Subject -->
   <div class="form-group">
     <%= form.label :subject, 'Subject' %>
-    <%= form.select :subject, options_for_select([["Math", "Math"], ["Science", "Science"]]), prompt: "Choose option", class: "form-control", id: "subject" %>
+    <%= form.select :subject, options_for_select([["Math", "Math"], ["Science", "Science"],["Ruby", "Ruby"]]), prompt: "Choose option", class: "form-control", id: "subject" %>
       <% if @register.errors[:subject].any? %>
       <div class="error-message">
       <%= @register.errors[:subject].join(", ") %>
