@@ -6,11 +6,20 @@ class RegistersController < ApplicationController
     @register = Register.find(params[:id])
   end
   def list
+    @registers = Register.all
+
+    # Initialize @subjects with an array of subjects
     @subjects = Register.pluck(:subject).uniq
+
+    # Apply search filter
+    if params[:search].present?
+      search_term = params[:search].downcase
+      @registers = @registers.where("LOWER(first_name) LIKE :term OR LOWER(last_name) LIKE :term", term: "%#{search_term}%")
+    end
+
+    # Apply subject filter
     if params[:subject].present?
-      @registers = Register.where(subject: params[:subject])
-    else
-      @registers = Register.all
+      @registers = @registers.where(subject: params[:subject])
     end
   end
   def new

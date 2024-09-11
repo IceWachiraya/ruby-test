@@ -95,16 +95,62 @@
   color: #a3a3a3
 }
 
-.filter{
- display: flex;
- justify-content: end;
- gap: 0.5rem;
- 
-}
 
 /* Responsive for smaller screens */
 @media screen and (max-width: 768px) {
   .container-list {
     width: 90%; 
+  }
+}
+
+.filter-search {
+  display: flex;
+  justify-content: space-between; /* Space out elements */
+  align-items: center;
+  gap: 1rem; /* Space between the search and subject dropdown */
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem; /* Space between search input and search button */
+  align-items: center;
+}
+
+.filter-select, .filter-input {
+  padding: 8px;
+  border-radius: 8px;
+  
+}
+
+.btn-search {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  height: 35px; /* Set a fixed height */
+  padding: 0 8px; /* Optional: Control the padding for width */
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+#filter-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Ensure elements are spread across the row */
+  gap: 1rem;
+}
+
+.filter {
+  flex: 1; /* Allow the subject dropdown to take up remaining space */
+}
+
+@media screen and (max-width: 768px) {
+  .filter-search {
+    flex-direction: column; /* Stack elements on smaller screens */
+    gap: 0.5rem;
+  }
+
+  .search, .filter {
+    width: 100%;
   }
 }

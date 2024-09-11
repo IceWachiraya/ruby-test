@@ -14,11 +14,20 @@
     <!-- Heading for the user list -->
     <h1>Complete User List</h1>
     </div>
-      <div class="filter">
-        <%= form_with url: list_register_path, method: :get, local: true, html: { id: 'filter-form' } do %>
-         <%= select_tag :subject, options_for_select(@subjects, params[:subject]), prompt: "All subjects", id: 'subject-select', class: 'filter-select' %>
-        <% end %>
-      </div>
+      
+    <div class="filter-search">
+      <%= form_with url: list_register_path, method: :get, local: true, html: { id: 'filter-form' } do %>
+        <div class="search">
+          <%= text_field_tag :search, params[:search], placeholder: "Search by name", id: 'search-input', class: 'filter-input' %>
+          <%= submit_tag "Search", class: ' btn-search' %>
+        </div>
+
+        <div class="subject">
+          <%= select_tag :subject, options_for_select(@subjects, params[:subject]), prompt: "All subjects", id: 'subject-select', class: 'filter-select' %>
+        </div>
+      <% end %>
+    </div>
+
 
 
 
