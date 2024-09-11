@@ -24,20 +24,12 @@ class RegistersController < ApplicationController
     @register = Register.find(params[:id])
   end
 
-  def update
-    @register = Register.find(params[:id])
-    if @register.update(register_params)
-      redirect_to @register
-    else
-      render 'edit',status: :unprocessable_entity
-    end
-  end
   def destroy
     @register = Register.find(params[:id])
     @register.destroy
-
-    redirect_to list_register_path, status: :see_other
+    redirect_to list_register_path, notice: 'User was successfully deleted.'
   end
+  
 
   private
   def register_params

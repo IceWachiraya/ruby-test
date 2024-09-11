@@ -40,8 +40,11 @@
   .btn-delete {
     background-color: #dc3545;
   }
-  
 
+  .btn-no{
+    background-color: rgb(110, 110, 110);
+  }
+  
   
   .details-list p {
     margin: 10px 0;
@@ -69,3 +72,34 @@
     }
   }
   
+ 
+.modal {
+  display: none; /* ซ่อนไว้เริ่มต้น */
+  position: fixed; /* อยู่ที่ตำแหน่งคงที่ */
+  z-index: 1; /* อยู่เหนือสุด */
+  left: 0;
+  top: 0;
+  width: 100%; /* กว้างเต็มหน้าจอ */
+  height: 100%; /* สูงเต็มหน้าจอ */
+  overflow: auto; /* เลื่อนหากจำเป็น */
+  background-color: rgba(0,0,0,0.4); /* สีพื้นหลังดำ */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  border-radius: 8px;
+  margin: auto; /* ทำให้โมดัลอยู่ตรงกลางแนวนอน */
+  padding: 20px;
+  width: 80%; /* ขนาดสามารถปรับได้ตามขนาดหน้าจอ */
+  max-width: 450px; /* ขนาดสูงสุดที่ต้องการ */
+  position: relative;
+  top: 50%; /* กำหนดตำแหน่งบนสุดให้ตรงกลาง */
+  transform: translateY(-50%); /* ย้ายตำแหน่งขึ้น 50% ของความสูงโมดัล */
+}
+
+
+
