@@ -3,7 +3,7 @@
   <div class="container-show">
    
     <!-- User Details -->
-    <div class="user-details">
+    <div class="user-details" data-controller="delete">
  
         <%= link_to list_register_path, class: "btn-back-all-users" do %>
           <i class="fas fa-arrow-left"></i> Back
@@ -25,8 +25,8 @@
       <div class="action-links">
         <%= link_to "Edit", edit_register_path(@register), class: "btn btn-edit" %>
 
-        <%= form_with(model: @register, url: register_path(@register), method: :delete, local: true, html: { id: 'delete-form', class: 'delete-form' }) do |form| %>
-          <button type="button" class="btn btn-delete delete-button">Delete</button>
+        <%= form_with(model: @register, url: register_path(@register), method: :delete, local: true, html: { id: 'delete-form', class: 'delete-form' },data: { controller: "delete"}) do |form| %>
+          <button type="button" class="btn btn-delete delete-button" data-action="click->delete#show_modal">Delete</button>
         <% end %>
 
       </div>
@@ -35,9 +35,9 @@
       <div id="deleteConfirmationModal" class="modal">
         <div class="modal-content">
           <p>Are you sure you want to delete this user?</p>
-          <div class="modal-actions">
-             <button id="confirmDelete" class="btn btn-delete ">Yes, Delete</button>
-            <button id="cancelDelete" class="btn btn-no">No</button>
+          <div class="modal-actions" >
+             <button id="confirmDelete" class="btn btn-delete" data-action="click->delete#confirm_delete">Yes, Delete</button>
+            <button id="cancelDelete" class="btn btn-no" data-action="click->delete#close_modal">No</button>
           </div>
         </div>
       </div>

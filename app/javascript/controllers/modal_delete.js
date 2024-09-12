@@ -5,34 +5,27 @@ document.addEventListener('turbo:load', () => {
   const closeButton = modal.querySelector('.close');
   let deleteForm = null;
 
-  // แสดงโมดัลเมื่อคลิกที่ปุ่มลบ
+  //Show modal when click delete button 
   document.querySelectorAll('.delete-button').forEach(button => {
     button.addEventListener('click', (event) => {
-      event.preventDefault(); // ป้องกันการส่งฟอร์มทันที
+      event.preventDefault(); 
       deleteForm = button.closest('form');
       modal.style.display = 'block';
     });
   });
 
-  // ยืนยันการลบ
+ //ConfirmDelete when click  Yes,Delete button
   confirmDeleteButton.addEventListener('click', () => {
     if (deleteForm) {
       deleteForm.submit(); // ส่งฟอร์มเมื่อยืนยัน
     }
   });
 
-  // ยกเลิกการลบหรือปิดโมดัล
+    //Hide modal when click cencel button
   function hideModal() {
     modal.style.display = 'none';
   }
 
   cancelDeleteButton.addEventListener('click', hideModal);
   closeButton.addEventListener('click', hideModal);
-
-  // คลิกนอกโมดัลเพื่อปิดโมดัล
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      hideModal();
-    }
-  });
 });

@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 // import "./controllers/phone"
-import "./controllers/modal_delete"
+// import "./controllers/modal_delete"
 import "./controllers/filter"
 
 
