@@ -1,5 +1,9 @@
 <body class="body-register">
 <div class="reg-form-container">
+
+        <%= link_to list_register_path, class: "btn-back-all-users" do %>
+          <i class="fas fa-arrow-left"></i> Back
+        <% end %>
    
   <%= form_with model: @register, local: true, class: "reg-form" do |form| %>
    <h1>Edit Users</h1>
@@ -93,7 +97,7 @@
 
   <!-- Submit Button -->
   <div class="form-group">
-    <%= form.submit "Update", class: "btn-submit" %>
+    <%= form.submit "Update", class: "btn btn-submit" %>
   </div>
    
 </div>

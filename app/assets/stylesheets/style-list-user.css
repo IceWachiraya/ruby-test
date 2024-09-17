@@ -1,7 +1,6 @@
 .body-list {
   font-family: Sans-serif, sans-serif;
-  background-color: #994376;
-  background-image: linear-gradient(#994376, #c54577);
+  background-color: #f0f8ff;
   padding-top: 32px;
   width: 60%;
   height: 100vh;
@@ -9,9 +8,10 @@
 }
 
 .container-list {
-  background-color: white;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
  
 }
 
@@ -23,37 +23,13 @@
 
 .row-btn {
   display: flex;
-  justify-content: space-between;
+  justify-content:end;
   margin-bottom: 24px;
 }
 
 .action-link {
   margin-right: 10px;
  
-}
-
-.btn {
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 10px;
-  color: white;
-}
-
-.btn-primary {
-  color: white;
-  background-color: #007bff;
-}
-.btn-back {
-  color:white ;
-}
-.btn-add {
-  background-color: #28a745;
-}
-.btn-info {
-  background-color: #007bff;
-}
-.btn-filter{
-  background-color: #17a2b8;
 }
 
 /* User list styling */
@@ -121,18 +97,6 @@
   border-radius: 8px;
   
 }
-
-.btn-search {
-  background-color: #17a2b8;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  height: 35px; /* Set a fixed height */
-  padding: 0 8px; /* Optional: Control the padding for width */
-  cursor: pointer;
-  margin-top: 7px;
-}
-
 #filter-form {
   width: 100%;
   display: flex;

@@ -1,27 +1,5 @@
-<body class="body-home" data-controller="create">
-  <div class="container-home">
-    <!-- Navigation Section -->
-    <div class="header">
-      <h1>User Management</h1>
-      <p>Manage your users efficiently by creating new users or viewing the list of all registered users.</p>
-    </div>
 
-    <!-- Action Buttons -->
-    <div class="action-buttons">
-      <!-- Create Users Button -->
-      <button type="button" class="btn btn-add" data-action="click->create#show_modal">
-        <i class="fas fa-user-plus"></i> Create Users
-      </button>
-
-      <!-- View All Users Button -->
-      <div class="action-link">
-        <%= link_to list_register_path, class: "btn btn-info btn-large" do %>
-          <i class="fas fa-users"></i> All Users
-        <% end %>
-      </div>
-    </div>
-
-    <!-- Modal for Creating Users -->
+        <!-- Modal for Creating Users -->
     <div id="createModal" class="modal-create" data-controller="create">
       <div class="modal-content-create">
         <h1>Create Users</h1>
@@ -80,13 +58,11 @@
             <div class="error-message" id="error_subject"></div>
           </div>
 
-          <!-- Submit Button -->
+          <!--Button -->
           <div class="modal-actions">
             <%= form.submit "Submit", id: "confirmCreate", class: "btn btn-submit", data: { action: "click->create#confirm_create" } %>
-            <button type="button" id="cancelCreate" class="btn btn-no" data-action="click->create#close_modal">Cancel</button>
+            <button type="button" id="cancelCreate" class="btn btn-cancel" data-action="click->create#close_modal">Cancel</button>
           </div>
         <% end %>
       </div>
     </div>
-  </div>
-</body>

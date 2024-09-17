@@ -1,7 +1,6 @@
 .body-register{
     font-family: Sans-serif, sans-serif;
-    background-color: #994376;
-    background-image: linear-gradient(#994376, #c54577);
+    background-color: #f0f8ff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +14,31 @@
     width: 100%;
     max-width: 400px;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
   }
+  .modal-create{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+.modal-content-create{
+    background-color: #fefefe;
+    border-radius: 8px;
+    margin: auto;
+    padding: 20px;
+    width: 80%; 
+    max-width: 450px; 
+    position: relative;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
   .form-row {
     display: flex;
     gap: 32px;
@@ -25,12 +48,23 @@
     flex: 1;
     position: relative;
   }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left; 
+  }
   .error-message {
     color: red;
     font-size: 12px;
     margin-top: 4px;
     position: absolute;
   }
+  .button-row{
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+  }
+ 
   
   input[type="text"],
   input[type="date"],
@@ -51,10 +85,9 @@
   .radio-group {
     display: flex;
     gap: 8px;
-    margin-top: 12px;
   }
   .label-gender {
-    margin-top: 4px;
+    margin-top: 2px;
   }
   
   input[type="radio"] {
@@ -78,16 +111,6 @@
     top: 2px;
     left: 2px;
   }
-  .btn-submit {
-    background-color: #5a73d0;
-    color: white;
-    border: none;
-    padding: 8px 28px;
-    font-size: 16px;
-    border-radius: 10px;
-    margin-top: 16px;
-  }
-  
   @media (max-width: 760px) {
     .reg-form-container {
       max-width: 400px;

@@ -1,15 +1,12 @@
-<body class="body-list">
-
- <div class="row-btn">
-  <%= link_to registers_path, class: "btn btn-back" do %>
-    <i class="fas fa-arrow-left"></i>Back
-  <% end %>
-  <%= link_to new_register_path, class: "btn btn-add" do %>
-  <i class="fas fa-user-plus"></i>Create Users
-  <% end %>
-  </div>
-
+<body class="body-list" data-controller="create">
   <div class="container-list">
+    <div class="row-btn" >
+        <!-- Button to open the modal -->
+    <button type="button" class="btn btn-add" data-action="click->create#show_modal">
+      <i class="fas fa-user-plus"></i> Create Users
+    </button>
+    <%= render partial:"create_modal"%>
+  </div>
     <div class="header">
     <!-- Heading for the user list -->
     <h1>Complete User List</h1>
@@ -27,10 +24,6 @@
         </div>
       <% end %>
     </div>
-
-
-
-
     <!-- List of all users -->
     <div class="user-list">
       <% if @registers.any? %>
@@ -39,9 +32,28 @@
           <li class="user-card">
             <div class="user-info">
               <p class="name-info"><%= register.first_name %> <%= register.last_name %></p>
-              <p class="subject-info">Subject : <%= register.subject %></p>
+               <p><i class="fas fa-cake-candles"></i>
+                  <% if register.birthday.present? %>
+                    <%= register.birthday.strftime("%d %B %Y") %>
+                  <% else %>
+                    Not Available
+                  <% end %>
+                </p>
+                <p><i class="fas fa-venus-mars"></i> <%= register.gender %></p>
+               <p><i class="fas fa-envelope"></i>  <%= register.email %></p>
+               <p><i class="fas fa-phone"></i> <%= register.phone %></p>
+               <p><i class="fas fa-book"></i> <%= register.subject %></p>
             </div>
-            <%= link_to "View Details", register_path(register), class: "btn btn-info view-details" %>
+
+              <!-- Action Links -->
+                <div class="action-links">
+                  <%= link_to "Edit", edit_register_path(register), class: "btn btn-edit" %>
+
+                  <%= form_with(model: register, url: register_path(register), method: :delete, local: true, html: { id: 'delete-form', class: 'delete-form' },data: { controller: "delete"}) do |form| %>
+                    <button type="button" class="btn btn-delete" data-action="click->delete#show_modal">Delete</button>
+                  <% end %>
+                    <%= render partial:"delete_modal"%>
+                </div>
           </li>
         <% end %>
         </ul>

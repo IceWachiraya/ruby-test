@@ -1,0 +1,41 @@
+.btn {
+    color: white;
+    border: none;
+    padding: 8px 28px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 16px;
+  }
+
+  .btn-add {
+    background-color: #28a745;
+  }
+  .btn-edit {
+    background-color: #007bff;
+    text-decoration: none;
+  }
+
+  .btn-cancel{
+    background-color:#5e5e5e;
+  }
+  .btn-submit {
+    background-color: #5a73d0;
+  }
+  .btn-delete {
+    background-color: #dc3545;
+  }
+  .btn-back-all-users{
+    color: #5e5e5e;
+    text-decoration: none;
+  }
+  .btn-search {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    height: 35px; 
+    padding: 0 8px; 
+    cursor: pointer;
+    margin-top: 7px;
+  }
+  
