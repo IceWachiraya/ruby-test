@@ -16,7 +16,7 @@
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
   }
-  .modal-create{
+  .modal {
     display: none; 
     position: fixed; 
     z-index: 1;
@@ -27,9 +27,13 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
   }
-.modal-content-create{
+ .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background-color: #fefefe;
-    border-radius: 8px;
+    border-radius: 16px;
     margin: auto;
     padding: 20px;
     width: 80%; 
@@ -85,6 +89,8 @@
   .radio-group {
     display: flex;
     gap: 8px;
+   margin-top: 18px;
+    
   }
   .label-gender {
     margin-top: 2px;

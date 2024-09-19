@@ -22,8 +22,8 @@
     </div>
 
     <!-- Modal for Creating Users -->
-    <div id="createModal" class="modal-create" data-controller="create">
-      <div class="modal-content-create">
+    <div id="createModal" class="modal" data-controller="create">
+      <div class="modal-content">
         <h1>Create Users</h1>
         <%= form_with(model: @register, url: registers_path, method: :post, local: false, html: { id: 'reg-form', class: 'reg-form' }) do |form| %>
           <!-- Row First Name and Last Name -->
@@ -81,7 +81,7 @@
           </div>
 
           <!-- Submit Button -->
-          <div class="modal-actions">
+          <div class="row-btn">
             <%= form.submit "Submit", id: "confirmCreate", class: "btn btn-submit", data: { action: "click->create#confirm_create" } %>
             <button type="button" id="cancelCreate" class="btn btn-no" data-action="click->create#close_modal">Cancel</button>
           </div>
